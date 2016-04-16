@@ -18,4 +18,29 @@
         android:duration="600" />
 </animation-list>
 
-3. codes.
+3. set head xml.
+
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="20dp">
+
+    <TextView
+        android:id="@+id/refresh_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:padding="10dp"
+        android:text="正在刷新" />
+
+    <ImageView
+        android:id="@+id/refresh_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@id/refresh_text"
+        android:layout_toStartOf="@id/refresh_text" />
+
+</RelativeLayout>
+
+then codes.
