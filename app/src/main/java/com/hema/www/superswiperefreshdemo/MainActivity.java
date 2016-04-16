@@ -13,10 +13,9 @@ public class MainActivity extends AppCompatActivity {
     SuperSwipeRefreshLayout swipeRefreshLayout;
 
     TextView text;
-
     ImageView img;
 
-    int count;
+//    int count;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,8 +58,9 @@ public class MainActivity extends AppCompatActivity {
 //                }
                 animationDrawable.start();
 
-                imgSwitchHandler.postDelayed(this, 1200);
-                count++;
+                // each anim costs 600 ms, total 3 brings 1800.
+                imgSwitchHandler.postDelayed(this, 1800);
+//                count++;
             }
         };
 
@@ -68,8 +68,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onRefresh() {
                 text.setText("疯狂加载中...");
-                // TODO anim.
-
                 imgSwitchHandler.postDelayed(imgswitchtask, 0);
 
                 new Handler().postDelayed(new Runnable() {
@@ -77,6 +75,7 @@ public class MainActivity extends AppCompatActivity {
                     public void run() {
                         swipeRefreshLayout.setRefreshing(false);
                         imgSwitchHandler.removeCallbacks(imgswitchtask);
+                        animationDrawable.stop();
                     }
                 }, 6000);
             }
@@ -89,7 +88,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onPullEnable(boolean enable) {
                 text.setText(enable ? "松开刷新" : "下拉刷新");
-
             }
         });
     }
