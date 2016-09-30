@@ -3,7 +3,7 @@
 1. import jar. android-support-v7-recyclerview.jar
 
 2. set anim.
-
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <animation-list xmlns:android="http://schemas.android.com/apk/res/android">
 
@@ -17,9 +17,10 @@
         android:drawable="@drawable/pull_header3"
         android:duration="600" />
 </animation-list>
+```
 
 3. set head xml.
-
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
@@ -42,5 +43,6 @@
         android:layout_toStartOf="@id/refresh_text" />
 
 </RelativeLayout>
+```
 
 then codes.
